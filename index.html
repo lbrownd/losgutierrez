@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bar & Grill Los Gutierrez — Carnes a las brasas, ensaladas frescas y refrescos naturales. El sabor auténtico del grill de Hugo Gutierrez." />
+  <title>Bar &amp; Grill Los Gutierrez — Sabor a las brasas</title>
+
+  <!-- Tipografías: Fraunces (display serif) + Inter (texto y UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+ 
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+
+      <!-- Logotipo -->
+      <a href="#inicio" class="navbar__logo" aria-label="Bar and Grill Los Gutierrez — Inicio">
+        <span class="navbar__logo-fire" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2c1 3-2 4.5-2 7.5 0 1.8 1.2 3 3 3s3-1.2 3-3c0-.8-.2-1.6-.7-2.3C17.5 8.5 19 11 19 14a7 7 0 1 1-14 0c0-3.5 2-6.5 4.5-9C10 4.5 11 3.2 12 2z"/>
+          </svg>
+        </span>
+        <span class="navbar__logo-text">Los <em>Gutierrez</em><small>Bar &amp; Grill</small></span>
+      </a>
+
+      <!-- Enlaces de navegación -->
+      <nav class="navbar__links" id="navLinks" aria-label="Navegación principal">
+        <a href="#inicio" class="navbar__link">Inicio</a>
+        <a href="#menu" class="navbar__link">Menú</a>
+        <a href="#nosotros" class="navbar__link">Sobre Nosotros</a>
+        <a href="#contacto" class="navbar__link">Contacto</a>
+        <a href="#contacto" class="btn btn--fire navbar__cta navbar__cta--mobile">Reservar Mesa</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="#contacto" class="btn btn--fire navbar__cta">Reservar Mesa</a>
+        <!-- Botón hamburguesa (solo móvil) -->
+        <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO — bienvenida a pantalla completa
+       ============================================================ -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <p class="hero__kicker reveal">Bar &amp; Grill · Desde la parrilla de la familia Gutierrez</p>
+      <h1 class="hero__title reveal">
+        Donde el fuego<br />se vuelve <em>sabor</em>
+      </h1>
+      <p class="hero__subtitle reveal">
+        Cortes premium a las brasas, vegetales frescos del huerto y la hospitalidad
+        de la casa de Hugo Gutierrez. Cada plato sale directo de la parrilla a tu mesa.
+      </p>
+      <div class="hero__actions reveal">
+        <a href="#menu" class="btn btn--fire">Ver Menú</a>
+        <a href="#contacto" class="btn btn--ghost">Reservar Mesa</a>
+      </div>
+    </div>
+
+    <a href="#menu" class="hero__scroll" aria-label="Bajar al menú">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ============================================================
+       MARQUEE — cinta cinética de especialidades
+       ============================================================ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Carne a las brasas</span><i>✦</i><span>Ensaladas frescas</span><i>✦</i>
+      <span>Refrescos naturales</span><i>✦</i><span>Vegetales del huerto</span><i>✦</i>
+      <span>Sabor de familia</span><i>✦</i>
+      <span>Carne a las brasas</span><i>✦</i><span>Ensaladas frescas</span><i>✦</i>
+      <span>Refrescos naturales</span><i>✦</i><span>Vegetales del huerto</span><i>✦</i>
+      <span>Sabor de familia</span><i>✦</i>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MENÚ — sección principal con filtro por categorías
+       ============================================================ -->
+  <section class="menu" id="menu">
+    <div class="section-head">
+      <p class="section-head__label reveal">01 / Nuestro Menú</p>
+      <h2 class="section-head__title reveal">De la brasa <em>a tu mesa</em></h2>
+      <p class="section-head__text reveal">
+        Diez platillos de la casa, refrescos naturales preparados al momento
+        y tus embotelladas favoritas, bien frías.
+      </p>
+    </div>
+
+    <!-- Pestañas / botones de categoría -->
+    <div class="menu__tabs reveal" role="tablist" aria-label="Categorías del menú">
+      <button class="menu__tab is-active" data-filter="todo" role="tab" aria-selected="true">Todo</button>
+      <button class="menu__tab" data-filter="comidas" role="tab" aria-selected="false">Comidas</button>
+      <button class="menu__tab" data-filter="naturales" role="tab" aria-selected="false">Refrescos Naturales</button>
+      <button class="menu__tab" data-filter="embotelladas" role="tab" aria-selected="false">Bebidas Embotelladas</button>
+      <span class="menu__tab-indicator" aria-hidden="true"></span>
+    </div>
+
+    <!-- Rejilla de tarjetas del menú -->
+    <div class="menu__grid" id="menuGrid">
+
+      <!-- ============ COMIDAS ============ -->
+      <article class="card" data-category="comidas">
+        <figure class="card__media">
+          <img src="img/churrasco.jpg" alt="Churrasco Los Gutierrez con vegetales salteados al wok" loading="lazy" />
+          <span class="card__badge">Estrella de la casa</span>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Churrasco Los Gutierrez</h3>
+            <span class="card__price">$18.50</span>
+          </div>
+          <p class="card__desc">Jugoso corte de carne a la parrilla, sellado a fuego vivo y acompañado de vegetales salteados al wok con un toque ahumado.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="comidas">
+        <figure class="card__media">
+          <img src="img/filete.jpg" alt="Filete de res de la casa con salsa de romero" loading="lazy" />
+          <span class="card__badge">Parrilla</span>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Filete de Res de la Casa</h3>
+            <span class="card__price">$21.00</span>
+          </div>
+          <p class="card__desc">Filete tierno bañado en salsa de romero, con guarnición de espárragos y zanahorias baby glaseadas.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="comidas">
+        <figure class="card__media">
+          <img src="img/costillas.jpg" alt="Costillas BBQ premium ahumadas" loading="lazy" />
+          <span class="card__badge">Ahumado lento</span>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Costillas BBQ Premium</h3>
+            <span class="card__price">$16.75</span>
+          </div>
+          <p class="card__desc">Costillas de cerdo ahumadas por horas, lacadas con nuestra BBQ de la casa y verduras asadas a las brasas.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="comidas">
+        <figure class="card__media">
+          <img src="img/pollo.jpg" alt="Pollo al grill con brócoli y pimientos" loading="lazy" />
+          <span class="card__badge">Del huerto</span>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Pollo al Grill de Huerto</h3>
+            <span class="card__price">$13.50</span>
+          </div>
+          <p class="card__desc">Pechuga de pollo marinada en hierbas, sobre una cama de brócoli, pimientos y cebollas salteadas.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="comidas">
+        <figure class="card__media">
+          <img src="img/brochetas.jpg" alt="Brochetas mixtas de carne y pollo con chimichurri" loading="lazy" />
+          <span class="card__badge">Para compartir</span>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Brochetas Mixtas</h3>
+            <span class="card__price">$12.00</span>
+          </div>
+          <p class="card__desc">Pinchos de carne, pollo y vegetales asados al carbón, coronados con un toque fresco de chimichurri.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="comidas">
+        <figure class="card__media">
+          <img src="img/ensalada-suprema.jpg" alt="Ensalada suprema de la casa con aguacate y frutos secos" loading="lazy" />
+          <span class="card__badge">Fresco</span>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Ensalada Suprema de la Casa</h3>
+            <span class="card__price">$9.50</span>
+          </div>
+          <p class="card__desc">Mix de lechugas finas, aguacate, tomates cherry y frutos secos, con el aderezo especial secreto de la casa.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="comidas">
+        <figure class="card__media">
+          <img src="img/cesar.jpg" alt="Ensalada grill césar con tiras de carne asada" loading="lazy" />
+          <span class="card__badge">Grill</span>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Ensalada Grill César con Carne</h3>
+            <span class="card__price">$11.00</span>
+          </div>
+          <p class="card__desc">Lechuga romana, crutones dorados y queso parmesano, coronada con tiras de carne premium asada a la parrilla.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="comidas">
+        <figure class="card__media">
+          <img src="img/bowl.jpg" alt="Bowl saludable de res con quinoa y aguacate" loading="lazy" />
+          <span class="card__badge">Saludable</span>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Bowl Saludable de Res</h3>
+            <span class="card__price">$10.50</span>
+          </div>
+          <p class="card__desc">Base de quinoa esponjosa con láminas de carne magra, aguacate cremoso y verduras al vapor.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="comidas">
+        <figure class="card__media">
+          <img src="img/lomo.jpg" alt="Lomo salteado especial con tomates y pimientos" loading="lazy" />
+          <span class="card__badge">Al wok</span>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Lomo Salteado Especial</h3>
+            <span class="card__price">$14.00</span>
+          </div>
+          <p class="card__desc">Tiras de lomo de res salteadas a fuego alto con tomates, cebollas y pimientos verdes crujientes.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="comidas">
+        <figure class="card__media">
+          <img src="img/tropical.jpg" alt="Ensalada tropical con pollo, mango y fresas" loading="lazy" />
+          <span class="card__badge">Tropical</span>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Ensalada Tropical con Pollo</h3>
+            <span class="card__price">$10.00</span>
+          </div>
+          <p class="card__desc">Verduras frescas con dados de mango, fresas y pechuga al grill en láminas. Dulce, fresca y ligera.</p>
+        </div>
+      </article>
+
+      <!-- ============ REFRESCOS NATURALES ============ -->
+      <article class="card card--drink" data-category="naturales">
+        <figure class="card__media card__media--art" style="--art1:#3f5a2b;--art2:#9dbb72;">
+          <svg viewBox="0 0 24 24" class="card__art" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h12l-1.5 18h-9L6 3z"/><path d="M7 9h10"/><path d="M15.5 3 18 1"/><circle cx="10" cy="13" r="0.4"/><circle cx="13" cy="16" r="0.4"/>
+          </svg>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Limonada con Menta</h3>
+            <span class="card__price">$2.50</span>
+          </div>
+          <p class="card__desc">Limones recién exprimidos con hojas de menta machacadas y un toque justo de dulce. La favorita para el calor.</p>
+        </div>
+      </article>
+
+      <article class="card card--drink" data-category="naturales">
+        <figure class="card__media card__media--art" style="--art1:#7a3c10;--art2:#ff8c2e;">
+          <svg viewBox="0 0 24 24" class="card__art" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h12l-1.5 18h-9L6 3z"/><path d="M8 8a4 4 0 0 1 8 0"/><path d="M15.5 3 18 1"/>
+          </svg>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Jugo Natural de Naranja</h3>
+            <span class="card__price">$3.00</span>
+          </div>
+          <p class="card__desc">Naranjas dulces exprimidas al momento, sin azúcar añadida. Pura vitamina y sabor de huerto.</p>
+        </div>
+      </article>
+
+      <article class="card card--drink" data-category="naturales">
+        <figure class="card__media card__media--art" style="--art1:#6b4a10;--art2:#e8b23a;">
+          <svg viewBox="0 0 24 24" class="card__art" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h12l-1.5 18h-9L6 3z"/><path d="M9 12c1-2 5-2 6 0"/><circle cx="10.5" cy="13.5" r="0.4"/><circle cx="13" cy="14.5" r="0.4"/><path d="M15.5 3 18 1"/>
+          </svg>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Refresco de Calala</h3>
+            <span class="card__price">$3.00</span>
+          </div>
+          <p class="card__desc">Pulpa de maracuyá batida con agua fresca: ácido, tropical y aromático, como recién cortada de la mata.</p>
+        </div>
+      </article>
+
+      <article class="card card--drink" data-category="naturales">
+        <figure class="card__media card__media--art" style="--art1:#5c3a1c;--art2:#c98f45;">
+          <svg viewBox="0 0 24 24" class="card__art" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h12l-1.5 18h-9L6 3z"/><path d="M12 8v8"/><path d="M9.5 10.5 12 8l2.5 2.5"/><path d="M15.5 3 18 1"/>
+          </svg>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Té Frío de la Casa</h3>
+            <span class="card__price">$2.50</span>
+          </div>
+          <p class="card__desc">Infusión fría de té negro con rodajas de limón y un susurro de miel. Receta guardada de la familia.</p>
+        </div>
+      </article>
+
+      <article class="card card--drink" data-category="naturales">
+        <figure class="card__media card__media--art" style="--art1:#5e1626;--art2:#c53a52;">
+          <svg viewBox="0 0 24 24" class="card__art" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h12l-1.5 18h-9L6 3z"/><path d="M12 8c-2 2-2 5 0 7s4 1 4-2-2-4-4-5z"/><path d="M15.5 3 18 1"/>
+          </svg>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Jugo de Jamaica y Jengibre</h3>
+            <span class="card__price">$3.50</span>
+          </div>
+          <p class="card__desc">Flor de jamaica infusionada en frío con jengibre fresco rallado. Intenso, especiado y muy refrescante.</p>
+        </div>
+      </article>
+
+      <!-- ============ BEBIDAS EMBOTELLADAS ============ -->
+      <article class="card card--drink" data-category="embotelladas">
+        <figure class="card__media card__media--art" style="--art1:#4a0f0a;--art2:#d42b1e;">
+          <svg viewBox="0 0 24 24" class="card__art" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10 2h4v3l1.5 3v13a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V8L10 5V2z"/><path d="M8.5 12h7"/><path d="M8.5 16h7"/>
+          </svg>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Coca Cola</h3>
+            <span class="card__price">$1.50</span>
+          </div>
+          <p class="card__desc">La clásica, servida bien fría en su botella de vidrio. El acompañante eterno de una buena parrilla.</p>
+        </div>
+      </article>
+
+      <article class="card card--drink" data-category="embotelladas">
+        <figure class="card__media card__media--art" style="--art1:#122c52;--art2:#3a6fc4;">
+          <svg viewBox="0 0 24 24" class="card__art" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10 2h4v3l1.5 3v13a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V8L10 5V2z"/><circle cx="12" cy="13.5" r="2.5"/>
+          </svg>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Pepsi Cola</h3>
+            <span class="card__price">$1.50</span>
+          </div>
+          <p class="card__desc">Burbujeante y refrescante, directa del hielo a tu mesa. Perfecta con costillas BBQ.</p>
+        </div>
+      </article>
+
+      <article class="card card--drink" data-category="embotelladas">
+        <figure class="card__media card__media--art" style="--art1:#6e2f06;--art2:#ff7a1a;">
+          <svg viewBox="0 0 24 24" class="card__art" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10 2h4v3l1.5 3v13a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V8L10 5V2z"/><path d="M9.5 13a2.5 2.5 0 0 1 5 0"/>
+          </svg>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Fanta Naranja</h3>
+            <span class="card__price">$1.50</span>
+          </div>
+          <p class="card__desc">Sabor naranja encendido y dulce, con gas generoso. La preferida de los más pequeños de la casa.</p>
+        </div>
+      </article>
+
+      <article class="card card--drink" data-category="embotelladas">
+        <figure class="card__media card__media--art" style="--art1:#6b5a1e;--art2:#e8d27a;">
+          <svg viewBox="0 0 24 24" class="card__art" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10 2h4v3l1.5 3v13a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V8L10 5V2z"/><path d="M9 14c1-1.5 5-1.5 6 0"/>
+          </svg>
+        </figure>
+        <div class="card__body">
+          <div class="card__row">
+            <h3 class="card__name">Ensa Blanca</h3>
+            <span class="card__price">$1.50</span>
+          </div>
+          <p class="card__desc">Suave y cremosa, con ese dulzor inconfundible de toda la vida. Fría, sabe a domingo en familia.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS — Hugo Gutierrez y su pasión por el grill-->
+  <section class="about" id="nosotros">
+    <div class="about__grid">
+      <figure class="about__media reveal">
+        <img src="img/about.jpg" alt="Hugo Gutierrez cocinando a las brasas" loading="lazy" />
+        <span class="about__media-frame" aria-hidden="true"></span>
+      </figure>
+
+      <div class="about__content">
+        <p class="section-head__label reveal">02 / Sobre Nosotros</p>
+        <h2 class="section-head__title reveal">La parrilla es<br />nuestro <em>legado</em></h2>
+        <p class="about__text reveal">
+          Detrás de cada brasa está <strong>Hugo Gutierrez</strong>, fundador y alma de
+          Bar &amp; Grill Los Gutierrez. Lo que empezó como un asado familiar de domingos
+          se convirtió en su gran pasión: dominar el fuego, el humo y el punto exacto de cada corte.
+        </p>
+        <p class="about__text reveal">
+          En nuestra cocina no hay atajos: carbón encendido temprano, carnes seleccionadas
+          a mano y vegetales frescos del huerto. Así se cocina en casa de los Gutierrez,
+          y así te recibimos: como familia.
+        </p>
+        <blockquote class="about__quote reveal">
+          “El fuego no se apura. El buen sabor, tampoco.”
+          <cite>— Hugo Gutierrez</cite>
+        </blockquote>
+        <ul class="about__stats reveal">
+          <li><strong>15+</strong><span>años junto a la parrilla</span></li>
+          <li><strong>10</strong><span>platillos de la casa</span></li>
+          <li><strong>100%</strong><span>carbón y leña natural</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+         contacto, horarios y derechos
+       ============================================================ -->
+  <footer class="footer" id="contacto">
+    <div class="footer__grid">
+
+      <div class="footer__col">
+        <a href="#inicio" class="navbar__logo footer__logo">
+          <span class="navbar__logo-fire" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2c1 3-2 4.5-2 7.5 0 1.8 1.2 3 3 3s3-1.2 3-3c0-.8-.2-1.6-.7-2.3C17.5 8.5 19 11 19 14a7 7 0 1 1-14 0c0-3.5 2-6.5 4.5-9C10 4.5 11 3.2 12 2z"/>
+            </svg>
+          </span>
+          <span class="navbar__logo-text">Los <em>Gutierrez</em><small>Bar &amp; Grill</small></span>
+        </a>
+        <p class="footer__tagline">El gran sabor de los buenos cortes, servido con cariño de familia.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__title">Contacto</h4>
+        <ul class="footer__list">
+          <li>Av. de las Brasas 123, Centro</li>
+          <li><a href="tel:+50581481401">+505 8148 1401</a></li>
+          <li><a href="mailto:reservas@losgutierrez.com">reservas@losgutierrez.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__title">Horarios</h4>
+        <ul class="footer__list">
+          <li><span>Lunes – Jueves</span><span>12:00 – 22:00</span></li>
+          <li><span>Viernes – Sábado</span><span>12:00 – 23:30</span></li>
+          <li><span>Domingo</span><span>12:00 – 21:00</span></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__title">Reservas</h4>
+        <p class="footer__tagline">Asegura tu mesa junto a la parrilla. Te esperamos con el fuego encendido.</p>
+        <a href="tel:+50588888888" class="btn btn--fire">Reservar Mesa</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Bar &amp; Grill Los Gutierrez — Todos los derechos reservados.</p>
+      <p>Hecho con fuego y carbón por la familia Gutierrez.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
