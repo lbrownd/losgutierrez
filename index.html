@@ -6,7 +6,6 @@
   <meta name="description" content="Bar & Grill Los Gutierrez — Carnes a las brasas, ensaladas frescas y refrescos naturales. El sabor auténtico del grill de Hugo Gutierrez." />
   <title>Bar &amp; Grill Los Gutierrez — Sabor a las brasas</title>
 
-  <!-- Tipografías: Fraunces (display serif) + Inter (texto y UI) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -14,12 +13,10 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-
  
   <header class="navbar" id="navbar">
     <div class="navbar__inner">
-
-      <!-- Logotipo -->
+   
       <a href="#inicio" class="navbar__logo" aria-label="Bar and Grill Los Gutierrez — Inicio">
         <span class="navbar__logo-fire" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -29,8 +26,7 @@
         <span class="navbar__logo-text">Los <em>Gutierrez</em><small>Bar &amp; Grill</small></span>
       </a>
 
-      <!-- Enlaces de navegación -->
-      <nav class="navbar__links" id="navLinks" aria-label="Navegación principal">
+        <nav class="navbar__links" id="navLinks" aria-label="Navegación principal">
         <a href="#inicio" class="navbar__link">Inicio</a>
         <a href="#menu" class="navbar__link">Menú</a>
         <a href="#nosotros" class="navbar__link">Sobre Nosotros</a>
@@ -48,9 +44,7 @@
     </div>
   </header>
 
-  <!-- ============================================================
-       HERO — bienvenida a pantalla completa
-       ============================================================ -->
+
   <section class="hero" id="inicio">
     <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__overlay" aria-hidden="true"></div>
@@ -75,9 +69,7 @@
     </a>
   </section>
 
-  <!-- ============================================================
-       MARQUEE — cinta cinética de especialidades
-       ============================================================ -->
+
   <div class="marquee" aria-hidden="true">
     <div class="marquee__track">
       <span>Carne a las brasas</span><i>✦</i><span>Ensaladas frescas</span><i>✦</i>
@@ -89,9 +81,6 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       MENÚ — sección principal con filtro por categorías
-       ============================================================ -->
   <section class="menu" id="menu">
     <div class="section-head">
       <p class="section-head__label reveal">01 / Nuestro Menú</p>
@@ -102,7 +91,6 @@
       </p>
     </div>
 
-    <!-- Pestañas / botones de categoría -->
     <div class="menu__tabs reveal" role="tablist" aria-label="Categorías del menú">
       <button class="menu__tab is-active" data-filter="todo" role="tab" aria-selected="true">Todo</button>
       <button class="menu__tab" data-filter="comidas" role="tab" aria-selected="false">Comidas</button>
@@ -114,7 +102,6 @@
     <!-- Rejilla de tarjetas del menú -->
     <div class="menu__grid" id="menuGrid">
 
-      <!-- ============ COMIDAS ============ -->
       <article class="card" data-category="comidas">
         <figure class="card__media">
           <img src="img/churrasco.jpg" alt="Churrasco Los Gutierrez con vegetales salteados al wok" loading="lazy" />
@@ -255,7 +242,6 @@
         </div>
       </article>
 
-      <!-- ============ REFRESCOS NATURALES ============ -->
       <article class="card card--drink" data-category="naturales">
         <figure class="card__media card__media--art" style="--art1:#3f5a2b;--art2:#9dbb72;">
           <svg viewBox="0 0 24 24" class="card__art" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -331,7 +317,6 @@
         </div>
       </article>
 
-      <!-- ============ BEBIDAS EMBOTELLADAS ============ -->
       <article class="card card--drink" data-category="embotelladas">
         <figure class="card__media card__media--art" style="--art1:#4a0f0a;--art2:#d42b1e;">
           <svg viewBox="0 0 24 24" class="card__art" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -395,7 +380,6 @@
     </div>
   </section>
 
-  <!-- SOBRE NOSOTROS — Hugo Gutierrez y su pasión por el grill-->
   <section class="about" id="nosotros">
     <div class="about__grid">
       <figure class="about__media reveal">
@@ -429,9 +413,6 @@
     </div>
   </section>
 
-  <!-- ============================================================
-         contacto, horarios y derechos
-       ============================================================ -->
   <footer class="footer" id="contacto">
     <div class="footer__grid">
 
